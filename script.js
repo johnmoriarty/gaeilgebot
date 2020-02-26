@@ -32,6 +32,7 @@ function submitFunc() {
             "ia" : "<div class='has-as'>e-uh <span class='as-in'>(as in 'see a')</span></div>",
             "ua" : "<div class='has-as'>ooo-uh <span class='as-in'>(as in 'truant')</span></div>",
 
+            "eadh": "<div class='has-as'>eh <span class='as-in'>(as in 'hey')</span></div>",
             "ea" : "<div class='has-as'>aah <span class='as-in'>(as in 'mass')</span></div>",
             "io" : "<div class='has-as'>ih <span class='as-in'>(as in 'miss')</span></div>",
             "ui" : "<div class='has-as'>ih <span class='as-in'>(as in 'miss')</span></div>",
