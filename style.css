@@ -1,0 +1,114 @@
+* { transition: .25s ease all; }
+html { 
+    padding-top: 4rem;
+}
+body {
+    font-family: 'Amiri' ;
+    background-color: #222;
+    height: 100%;
+    color: white;
+    text-align: center;
+}
+
+input {
+    margin: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    border: 0;
+    font-size: 1rem;
+    padding: 1rem;    
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 5px 0 0 5px;
+}
+#submit {
+    padding: 1rem 1.5rem;
+    background: #e48800;
+    color: white;
+    text-transform: lowercase;
+    font-weight: 200;
+    border: 1px solid #e48800;
+    font-family: sans-serif;
+    border-radius: 0 5px 5px 0;
+    left: -5px;
+    top: -1px;
+    position: relative;
+}
+#submit:hover {
+    background-color: #4CAF50;;
+    border-color: #4CAF50;;
+}
+.subtitle{ color: #a0a0a0; }
+.lead { 
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+#output {
+    font-size: 2rem;
+}
+#explanation-box {
+    color: transparent;
+    padding: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+    text-align: left;
+}
+#explanation-box h4 {
+    font-weight: bold;
+}
+#explanation {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.plus { display: none; }
+
+.plus, .as-in,
+.pronunciation .has-as:before {
+    color: #a0a0a0;
+    font-size: .75rem;
+}
+
+#output { padding-top: 1rem; }
+#output p { margin-bottom: 0; }
+
+#output p .plus:first-child,
+#output p .plus:last-child,
+#output .plus:last-of-type { display: none; }
+
+#sharelink {
+    margin: 2rem;
+    font-size: .9rem;
+    color: #a0a0a0;
+}
+a { color: #a98558; }
+a:hover { color: #4CAF50; }
+
+.pronunciation {
+    display: inline-block;
+    position: relative;
+}
+.pronunciation .as-in {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+}
+.pronunciation .has-as:before {
+    content: '?';
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.pronunciation:hover .has-as:before {
+    display: none;
+}
+.pronunciation:hover .as-in {
+    display: block;
+}
