@@ -71,6 +71,7 @@ function submitFunc() {
             "th" : "h",
             "ph" : "f",
 
+            "h" : null,
             "b" : "b",
             "f" : ["lastCharacter", "f", "v"],
             "l" : ["slenderBroad", "l", "l"],
@@ -85,7 +86,7 @@ function submitFunc() {
             "x" : "x",
             "k" : "?",
             "w" : "?",
-            "y" : "?",
+            "y" : "y",
             "q" : "?",
             "z" : "z",            
             "j" : "j",            
@@ -121,6 +122,7 @@ function submitFunc() {
             "u" : "<li>'u' sounds like 'uh' as in 'muck'</span></li>",
 
             "ghdh" : "<li>'ghdh' is probably silent</li>",
+            "h" : "<li>'h' on it's own is probably either silent or a sort of breath</li>",
 
             // eclipsed consonants (urú)
             "mb" : "<li>'mb' is an exlipsed consonant. The last letter is silent, so this is just pronounced as an 'm' here.</li>",
@@ -159,7 +161,7 @@ function submitFunc() {
             "q" : "<li>'q' is not a traditional Irish character. Are you sure this is an Irish word?</li>",
             "w" : "<li>'w' is not a traditional Irish character. Are you sure this is an Irish word?</li>",
             "k" : "<li>'k' is not a traditional Irish character. Are you sure this is an Irish word?</li>",
-            "y" : "<li>'y' is not a traditional Irish character. Are you sure this is an Irish word?</li>",
+            "y" : "<li>'y' is not a traditional Irish character. But it's probably pronounced as you'd think.</li>",
 
             "t" : ["<li>'t' makes a 'ch' sound (as in 'chuck') when preceded or followed by a slender vowel</li>","<li>'t' makes a standard 't' sound when preceded or followed by a broad vowel</li>"],
             "s" : ["<li>'s' makes a 'sh' sound (as in 'shoe') when preceded or followed by a slender vowel</li>","<li>'s' makes a standard 's' sound (as in 'snake') when preceded or followed by a broad vowel</li>"],
