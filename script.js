@@ -138,8 +138,8 @@ function submitFunc() {
             "mh" : ["<li>'bh' and 'mh' make a 'v' sound when they precede or follow a slender vowel</li>","<li>'bh' and 'mh' make a 'w' sound when they precede or follow a broad vowel</li>"],
             "dh" : ["<li>'dh' and 'gh' make a 'y' sound when they precede or follow a slender vowel</li>","<li>'dh' and 'gh' make a 'g' sound when they precede or follow a broad vowel</li>"],
             "gh" : ["<li>'dh' and 'gh' make a 'y' sound when they precede or follow a slender vowel</li>","<li>'dh' and 'gh' make a 'g' sound when they precede or follow a broad vowel</li>"],            "fh" : "<li>'fh' is usually silent</li>",            
-            "sh" : "h",
-            "th" : "h",
+            "sh" : "<li>'sh' sounds like an 'h'</li>",
+            "th" : "<li>'th' sounds like an 'h'</li>",
 
             "d" : ["<li>'d' makes a 'j' sound when it precedes or follows a slender vowel</li>","<li>'d' sounds like you'd expect when it precedes or follows a broad vowel</li>"],
             "f" : ["<li>'f' usually sounds how you'd expect</li>", "<li>'f' maybe(?) makes a 'v' sound when it appears at the end of a word</li>"],
