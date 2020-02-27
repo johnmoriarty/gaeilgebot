@@ -221,7 +221,7 @@ function submitFunc() {
             document.getElementById("explanation-box").style.background = "#999";
             document.getElementById("explanation-box").style.color = "white";
             document.getElementById("output").innerHTML = "<div class='pronunciation'>" + outputArray.join("</div> <span class='plus'>+</span> <div class='pronunciation'>");
-            document.getElementById("sharelink").innerHTML = "Share this result: <a href='/?word="+userInput+"'>https://www.gaeilgebot.com/?word="+userInput+"</a>";
+            document.getElementById("sharelink").innerHTML = "Copy/paste this result to share it: <a href='/?word="+userInput+"'>https://www.gaeilgebot.com/?word="+userInput+"</a>";
             document.getElementById("explanation").innerHTML = explanationArray.join("");
         }
     //console.log(lowercaseInput);
