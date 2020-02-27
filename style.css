@@ -17,6 +17,7 @@ input#word {
     display: inline-block;
     border: 0;
     font-size: 1rem;
+    max-width: 80%;
     padding: 1rem;    
     text-align: center;
     border: 1px solid white;
@@ -39,6 +40,11 @@ input#word {
     background-color: #4CAF50;;
     border-color: #4CAF50;;
 }
+
+@media screen and (max-width: 575px) {
+    #submit, input#word { border-radius: 0;}
+}
+
 .subtitle{ color: #a0a0a0; }
 .lead { 
     font-size: 2rem;
