@@ -9,9 +9,9 @@ body {
     color: white;
     text-align: center;
 }
-
-input {
-    margin: 2rem;
+input#name { margin-top: 2rem; } 
+input#word {
+    margin: 0 2rem 2rem;
     margin-left: auto;
     margin-right: auto;
     display: inline-block;
@@ -51,9 +51,9 @@ input {
     color: transparent;
     padding: 2rem;
     max-width: 800px;
+    margin: 3rem;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 3rem;
     text-align: left;
 }
 #explanation-box h4 {
@@ -84,7 +84,7 @@ input {
     font-size: .9rem;
     color: #a0a0a0;
 }
-a { color: #a98558; }
+a { color: #e48800; }
 a:hover { color: #4CAF50; }
 
 .pronunciation {
