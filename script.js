@@ -50,14 +50,14 @@ function submitFunc() {
             "u" : "<div class='has-as'>uh <span class='as-in'>(as in 'muck')</span></div>",
 
             // eclipsed consonants (urú)
-            "mb" : "m",
-            "gc" : "g",
-            "nd" : "n",
-            "bhf" : ["slenderBroad", "v", "w"],
-            "ng" : "n",
-            "bp" : "b",
-            "ts" : ["slenderBroad", "ch", "t"],
-            "dt" : ["slenderBroad", "j", "d"], 
+            "mb" : ["eclipsed","m"],
+            "gc" : ["eclipsed","g"],
+            "nd" : ["eclipsed","n"],
+            "bhf" : ["eclipsedSlenderBroad", "v", "w"],
+            "ng" : ["eclipsed","n"],
+            "bp" : ["eclipsed","b"],
+            "ts" : ["eclipsedslenderBroad", "ch", "t"],
+            "dt" : ["eclipsedslenderBroad", "j", "d"], 
 
             "bh" : ["slenderBroad", "v", "w"],
             "mh" : ["slenderBroad", "v", "w"],
@@ -125,14 +125,14 @@ function submitFunc() {
             "h" : "<li>'h' on it's own is probably either silent or a sort of breath</li>",
 
             // eclipsed consonants (urú)
-            "mb" : "<li>'mb' is an exlipsed consonant. The last letter is silent, so this is just pronounced as an 'm' here.</li>",
-            "gc" : "<li>'gc' is an exlipsed consonant. The last letter is silent, so this is just pronounced as an 'g' here.</li>",
-            "nd" : "<li>'nd' is an exlipsed consonant. The last letter is silent, so this is just pronounced as an 'n' here.</li>",
-            "bhf" : ["<li>'bhf' is an exlipsed consonant. The last letter is silent, so this is just pronounced as a BH would be here, which sounds like 'v' (since it precedes a slender vowel).</li>", "<li>'bhf' is an exlipsed consonant. The last letter is silent, so this is just pronounced as a BH would be here, which sounds like 'w' (since it precedes a broad vowel).</li>"],
-            "ng" : "<li>'ng' is an exlipsed consonant. The last letter is silent, so this is just pronounced as an 'n' here.</li>",
-            "bp" : "<li>'bp' is an exlipsed consonant. The last letter is silent, so this is just pronounced as an 'b' here.</li>",
-            "ts" : ["<li>'ts' is an exlipsed consonant. The last letter is silent, so this is just pronounced as a T would be here, which sounds like 'ch' (since it precedes a slender vowel).</li>", "<li>'ts' is an exlipsed consonant. The last letter is silent, so this is just pronounced as a T would be here, which sounds like 't' (since it precedes a broad vowel).</li>"],
-            "dt" : ["<li>'dt' is an exlipsed consonant. The last letter is silent, so this is just pronounced as a D would be here, which sounds like 'j' (since it precedes a slender vowel).</li>", "<li>'dt' is an exlipsed consonant. The last letter is silent, so this is just pronounced as a D would be here, which sounds like 'd' (since it precedes a broad vowel).</li>"], 
+            "mb" : "<li>'mb' at the beginning of a word is an exlipsed consonant. The last letter is silent, so this is just pronounced as an 'm' here.</li>",
+            "gc" : "<li>'gc' at the beginning of a word is an exlipsed consonant. The last letter is silent, so this is just pronounced as an 'g' here.</li>",
+            "nd" : "<li>'nd' at the beginning of a word is an exlipsed consonant. The last letter is silent, so this is just pronounced as an 'n' here.</li>",
+            "bhf" : ["<li>'bhf' at the beginning of a word is an exlipsed consonant. The last letter is silent, so this is just pronounced as a BH would be here, which sounds like 'v' (since it precedes a slender vowel).</li>", "<li>'bhf' at the beginning of a word is an exlipsed consonant. The last letter is silent, so this is just pronounced as a BH would be here, which sounds like 'w' (since it precedes a broad vowel).</li>"],
+            "ng" : "<li>'ng' at the beginning of a word is an exlipsed consonant. The last letter is silent, so this is just pronounced as an 'n' here.</li>",
+            "bp" : "<li>'bp' at the beginning of a word is an exlipsed consonant. The last letter is silent, so this is just pronounced as an 'b' here.</li>",
+            "ts" : ["<li>'ts' at the beginning of a word is an exlipsed consonant. The last letter is silent, so this is just pronounced as a T would be here, which sounds like 'ch' (since it precedes a slender vowel).</li>", "<li>'ts' at the beginning of a word is an exlipsed consonant. The last letter is silent, so this is just pronounced as a T would be here, which sounds like 't' (since it precedes a broad vowel).</li>"],
+            "dt" : ["<li>'dt' at the beginning of a word is an exlipsed consonant. The last letter is silent, so this is just pronounced as a D would be here, which sounds like 'j' (since it precedes a slender vowel).</li>", "<li>'dt' at the beginning of a word is an exlipsed consonant. The last letter is silent, so this is just pronounced as a D would be here, which sounds like 'd' (since it precedes a broad vowel).</li>"], 
 
             "bh" : ["<li>'bh' and 'mh' make a 'v' sound when they precede or follow a slender vowel</li>","<li>'bh' and 'mh' make a 'w' sound when they precede or follow a broad vowel</li>"],
             "mh" : ["<li>'bh' and 'mh' make a 'v' sound when they precede or follow a slender vowel</li>","<li>'bh' and 'mh' make a 'w' sound when they precede or follow a broad vowel</li>"],
@@ -167,38 +167,58 @@ function submitFunc() {
             "s" : ["<li>'s' makes a 'sh' sound (as in 'shoe') when preceded or followed by a slender vowel</li>","<li>'s' makes a standard 's' sound (as in 'snake') when preceded or followed by a broad vowel</li>"],
         }
 
+
         function theWork() {
             for (characterSet of characterSets) {
                 var index = lowercaseInput.indexOf(characterSet);
                 if (index > -1) {
                     if (pronunciationOf[characterSet] instanceof Array) { // its an array if there are conditional rules
-                        let conditional = pronunciationOf[characterSet][0];                
-                        if ( conditional == "slenderBroad") {
+                        let conditional = pronunciationOf[characterSet][0];   
+                        function slenderBroadFunc() {
                             let slenderResult = pronunciationOf[characterSet][1];
                             let broadResult = pronunciationOf[characterSet][2];
                             if ( (slenderVowels.includes(userInput.charAt(index - 1))) // if characterSet follows 
                             || (slenderVowels.includes(userInput.charAt(index + characterSet.length))) ) { // or if characterSet is followed by 
-                                var outputToPush = slenderResult;
-                                var explanationToPush = explanationOf[characterSet][0];
+                                window.outputToPush = slenderResult;
+                                window.explanationToPush = explanationOf[characterSet][0];
                             } else {
-                                var outputToPush = broadResult;
-                                var explanationToPush = explanationOf[characterSet][1];
-                            }
+                                window.outputToPush = broadResult;
+                                window.explanationToPush = explanationOf[characterSet][1];
+                            }                
+                        }
+         
+                        if ( conditional == "slenderBroad") {
+                            slenderBroadFunc();
                         } else if ( conditional == "lastCharacter") {
+                            let nextChar = userInput.charAt(index + characterSet.length);
                             let notLastChar = pronunciationOf[characterSet][1];
                             let lastChar = pronunciationOf[characterSet][2];
 
-                            if ( userInput.charAt(index + characterSet.length) ){
-                                var outputToPush = notLastChar;
-                                var explanationToPush = explanationOf[characterSet][0];
+                            if ( (nextChar) && (nextChar != " ") ){
+                                window.outputToPush = notLastChar;
+                                window.explanationToPush = explanationOf[characterSet][0];
                             } else { // if charSet is the last character
-                                var outputToPush = lastChar;
-                                var explanationToPush = explanationOf[characterSet][1];
+                                window.outputToPush = lastChar;
+                                window.explanationToPush = explanationOf[characterSet][1];
+                            }
+                        } else if ( (conditional == "eclipsed") || (conditional == "eclipsedSlenderBroad") ) {
+                            let prevChar = userInput.charAt(index - 1);
+                            if ( (prevChar) && (prevChar != " ") ){ // if is NOT first character
+                                console.log(prevChar);
+                                window.outputToPush = characterSet;
+                                window.explanationToPush = "<li>'" + characterSet + "' at the beginning of a word is an eclipsed consonant and is silent, but since this isn't at the beginning, just pronounce it the way it looks.</li>";    
+                            } else { // it IS the first character
+                                if (conditional == "eclipsedSlenderBroad") {
+                                    slenderBroadFunc();
+                                } else { 
+                                    window.outputToPush = pronunciationOf[characterSet][1];
+                                    window.explanationToPush = explanationOf[characterSet];
+                                }
                             }
                         }
-                    } else { // no conditional rules = always pronounced the same
-                        var outputToPush = pronunciationOf[characterSet];
-                        var explanationToPush = explanationOf[characterSet];
+                  } else { // no conditional rules = always pronounced the same
+                        window.outputToPush = pronunciationOf[characterSet];
+                        window.explanationToPush = explanationOf[characterSet];
                     }
 
                     output[index] = outputToPush; // adding value as key=>val pair, keyed by index for ordering
@@ -208,7 +228,7 @@ function submitFunc() {
 
                     var removedCharacters = "*".repeat(characterSet.length);
                     lowercaseInput = lowercaseInput.replace(characterSet,removedCharacters); // reseting this as string minus the characterSet that was just run
-                    console.log(lowercaseInput);
+                    //console.log(lowercaseInput);
                     
                     theWork();
                 }
@@ -226,12 +246,10 @@ function submitFunc() {
             document.getElementById("sharelink").innerHTML = "Copy/paste this result to share it: <a href='/?word="+userInput+"'>https://www.gaeilgebot.com/?word="+userInput+"</a>";
             document.getElementById("explanation").innerHTML = explanationArray.join("");
         }
-    //console.log(lowercaseInput);
-
     }
 
 
-    // NOT WORKING - ADDRESS run the whole thing again if there are any letters left (ie - duplicate letters)
+    // run the whole thing again if there are any letters left (ie - duplicate letters)
     var checkingArray = lowercaseInput.split("");
     let uniqueArray = new Set();
     checkingArray.forEach(uniqueArray.add, uniqueArray);
